@@ -1,0 +1,1017 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Invoice" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection ConnectionStringObject="Data Source=alliance-sql;Initial Catalog=CRM;Integrated Security=True;Connect Timeout=60" IsAppSettingsProperty="false" Modifier="Assembly" Name="Connection" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vw_InvoiceTemplateAdapter" GeneratorDataComponentClassName="vw_InvoiceTemplateAdapter" Name="vw_InvoiceTemplate" UserDataComponentName="vw_InvoiceTemplateAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Connection" DbObjectName="CRM.dbo.vw_InvoiceTemplate" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        furt_FurtherID, furt_Name, furt_Status, furt_OpportunityId, furt_treattype, furt_diagnostics, furt_oss, furt_anaesthetic, furt_treatbooked, furt_date, furt_location, 
+                         furt_code, furt_treatment, furt_los, furt_invdate, furt_invnumber, furt_invamount, furt_invvat, furt_patientid, furt_insurer, furt_conultantid, furt_customerref, 
+                         furt_asnotes, furt_nomcode, furt_Dept, furt_daycase, furt_daycase1, furt_actualdateconfirmed, furt_Code1, furt_code2, furt_code3, furt_SI1, furt_SITotal, furt_PITotal, 
+                         furt_pinominal1, furt_pinominal2, furt_pinominal3, furt_sinominal1, furt_sinominal2, furt_sinominal3, furt_RxPerformed, furt_WhatNext, furt_consulfirstname, 
+                         furt_consLastName, furt_consAddress1, furt_consAddress2, furt_consAddress3, furt_consaddress4, furt_conspostcode, furt_policy, furt_patientname, 
+                         furt_patientDOB, furt_codetext2, furt_codetext1, furt_codetext3, furt_SageInvoice, furt_ReceiptedInvoice, furt_DiagnosticTests, furt_code4, furt_code5, furt_pi4, 
+                         furt_pi5, furt_si5, furt_sinominal4, furt_sinominal5, furt_pinominal4, furt_pinominal5, furt_si4, furt_codetext4, furt_codetext5, furt_recinvsent, furt_recinvsentmethod, 
+                         furt_healthcodebatch, furt_invvalue1, furt_invvalue2, furt_invvalue3, furt_invvalue4, furt_invvalue5, furt_treatval1, furt_treatval2, furt_treatval3, furt_treatval4, 
+                         furt_treatval5, furt_conspaymentdate, furt_source, furt_sourcecomment, furt_treatana, furt_consfee, furt_treatmentfee, furt_constfee, furt_dummytext, furt_complete, 
+                         furt_IncompleteComment, furt_healthcodeno, furt_healthcodestatus, furt_claimno, furt_reportextra, furt_treatmentconfsent, furt_treatmentconfdate, 
+                         furt_primarytreatmentid, furt_primarytreatmentcount, oppo_primaryconsultantid, oppo_excess, oppo_authdate, oppo_authvalue, oppo_consultdate, oppo_insurer, 
+                         oppo_insurercontact, oppo_policy, oppo_consultationdate, oppo_insurermail, oppo_bookingmail, oppo_invoicemail, oppo_consultantmail, oppo_consultantbookmail, 
+                         oppo_primarytreatmentcount, oppo_patientinitials, oppo_consultantinvoiceemail, furt_validated, furt_theatrelist, PatientName, ConsultantName, Code1Text, 
+                         furt_description1, Code2Text, furt_description2, Code3Text, furt_description3, Code4Text, furt_description4, Code5Text, furt_description5, TreatmentDescription, 
+                         furt_sagepaydate, furt_sagetakedate, pers_gmcno, PatientAddress, patientAddress1, patientAddress2, patientAddress3, patientAddress4, patientAddress5, 
+                         patientCity, patientCounty, patientPostcode, ConsultantAddress1, ConsultantAddress2, ConsultantAddress3, ConsultantAddress4, ConsultantAddress5, 
+                         ConsultantCity, ConsultantCounty, ConsultantPostcode, InsurerName, InsurerAddress1, InsurerAddress2, InsurerAddress3, InsurerAddress4, InsurerAddress5, 
+                         InsurerCity, InsurerCounty, InsurerPostcode, ConsultantBalance
+FROM            vw_InvoiceTemplate
+WHERE        (furt_FurtherID = @Param1)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param1" ColumnName="furt_FurtherID" DataSourceName="CRM.dbo.vw_InvoiceTemplate" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Param1" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="furt_FurtherID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="furt_FurtherID" DataSetColumn="furt_FurtherID" />
+              <Mapping SourceColumn="furt_date" DataSetColumn="furt_date" />
+              <Mapping SourceColumn="furt_conultantid" DataSetColumn="furt_conultantid" />
+              <Mapping SourceColumn="furt_treattype" DataSetColumn="furt_treattype" />
+              <Mapping SourceColumn="furt_los" DataSetColumn="furt_los" />
+              <Mapping SourceColumn="oppo_consultdate" DataSetColumn="oppo_consultdate" />
+              <Mapping SourceColumn="furt_Name" DataSetColumn="furt_Name" />
+              <Mapping SourceColumn="furt_Status" DataSetColumn="furt_Status" />
+              <Mapping SourceColumn="furt_OpportunityId" DataSetColumn="furt_OpportunityId" />
+              <Mapping SourceColumn="furt_diagnostics" DataSetColumn="furt_diagnostics" />
+              <Mapping SourceColumn="furt_oss" DataSetColumn="furt_oss" />
+              <Mapping SourceColumn="furt_treatbooked" DataSetColumn="furt_treatbooked" />
+              <Mapping SourceColumn="furt_location" DataSetColumn="furt_location" />
+              <Mapping SourceColumn="furt_code" DataSetColumn="furt_code" />
+              <Mapping SourceColumn="furt_treatment" DataSetColumn="furt_treatment" />
+              <Mapping SourceColumn="furt_invamount" DataSetColumn="furt_invamount" />
+              <Mapping SourceColumn="furt_invvat" DataSetColumn="furt_invvat" />
+              <Mapping SourceColumn="furt_patientid" DataSetColumn="furt_patientid" />
+              <Mapping SourceColumn="furt_customerref" DataSetColumn="furt_customerref" />
+              <Mapping SourceColumn="furt_asnotes" DataSetColumn="furt_asnotes" />
+              <Mapping SourceColumn="furt_nomcode" DataSetColumn="furt_nomcode" />
+              <Mapping SourceColumn="furt_Dept" DataSetColumn="furt_Dept" />
+              <Mapping SourceColumn="furt_daycase" DataSetColumn="furt_daycase" />
+              <Mapping SourceColumn="furt_daycase1" DataSetColumn="furt_daycase1" />
+              <Mapping SourceColumn="furt_actualdateconfirmed" DataSetColumn="furt_actualdateconfirmed" />
+              <Mapping SourceColumn="furt_Code1" DataSetColumn="furt_Code1" />
+              <Mapping SourceColumn="furt_code2" DataSetColumn="furt_code2" />
+              <Mapping SourceColumn="furt_code3" DataSetColumn="furt_code3" />
+              <Mapping SourceColumn="furt_SI1" DataSetColumn="furt_SI1" />
+              <Mapping SourceColumn="furt_SITotal" DataSetColumn="furt_SITotal" />
+              <Mapping SourceColumn="furt_PITotal" DataSetColumn="furt_PITotal" />
+              <Mapping SourceColumn="furt_pinominal1" DataSetColumn="furt_pinominal1" />
+              <Mapping SourceColumn="furt_pinominal2" DataSetColumn="furt_pinominal2" />
+              <Mapping SourceColumn="furt_pinominal3" DataSetColumn="furt_pinominal3" />
+              <Mapping SourceColumn="furt_sinominal1" DataSetColumn="furt_sinominal1" />
+              <Mapping SourceColumn="furt_sinominal2" DataSetColumn="furt_sinominal2" />
+              <Mapping SourceColumn="furt_sinominal3" DataSetColumn="furt_sinominal3" />
+              <Mapping SourceColumn="furt_RxPerformed" DataSetColumn="furt_RxPerformed" />
+              <Mapping SourceColumn="furt_WhatNext" DataSetColumn="furt_WhatNext" />
+              <Mapping SourceColumn="furt_consulfirstname" DataSetColumn="furt_consulfirstname" />
+              <Mapping SourceColumn="furt_consLastName" DataSetColumn="furt_consLastName" />
+              <Mapping SourceColumn="furt_consAddress1" DataSetColumn="furt_consAddress1" />
+              <Mapping SourceColumn="furt_consAddress2" DataSetColumn="furt_consAddress2" />
+              <Mapping SourceColumn="furt_consAddress3" DataSetColumn="furt_consAddress3" />
+              <Mapping SourceColumn="furt_consaddress4" DataSetColumn="furt_consaddress4" />
+              <Mapping SourceColumn="furt_conspostcode" DataSetColumn="furt_conspostcode" />
+              <Mapping SourceColumn="furt_policy" DataSetColumn="furt_policy" />
+              <Mapping SourceColumn="furt_patientname" DataSetColumn="furt_patientname" />
+              <Mapping SourceColumn="furt_patientDOB" DataSetColumn="furt_patientDOB" />
+              <Mapping SourceColumn="furt_codetext2" DataSetColumn="furt_codetext2" />
+              <Mapping SourceColumn="furt_codetext1" DataSetColumn="furt_codetext1" />
+              <Mapping SourceColumn="furt_codetext3" DataSetColumn="furt_codetext3" />
+              <Mapping SourceColumn="furt_SageInvoice" DataSetColumn="furt_SageInvoice" />
+              <Mapping SourceColumn="furt_ReceiptedInvoice" DataSetColumn="furt_ReceiptedInvoice" />
+              <Mapping SourceColumn="furt_DiagnosticTests" DataSetColumn="furt_DiagnosticTests" />
+              <Mapping SourceColumn="furt_code4" DataSetColumn="furt_code4" />
+              <Mapping SourceColumn="furt_code5" DataSetColumn="furt_code5" />
+              <Mapping SourceColumn="furt_pi4" DataSetColumn="furt_pi4" />
+              <Mapping SourceColumn="furt_pi5" DataSetColumn="furt_pi5" />
+              <Mapping SourceColumn="furt_si5" DataSetColumn="furt_si5" />
+              <Mapping SourceColumn="furt_sinominal4" DataSetColumn="furt_sinominal4" />
+              <Mapping SourceColumn="furt_sinominal5" DataSetColumn="furt_sinominal5" />
+              <Mapping SourceColumn="furt_pinominal4" DataSetColumn="furt_pinominal4" />
+              <Mapping SourceColumn="furt_pinominal5" DataSetColumn="furt_pinominal5" />
+              <Mapping SourceColumn="furt_si4" DataSetColumn="furt_si4" />
+              <Mapping SourceColumn="furt_codetext4" DataSetColumn="furt_codetext4" />
+              <Mapping SourceColumn="furt_codetext5" DataSetColumn="furt_codetext5" />
+              <Mapping SourceColumn="furt_recinvsent" DataSetColumn="furt_recinvsent" />
+              <Mapping SourceColumn="furt_recinvsentmethod" DataSetColumn="furt_recinvsentmethod" />
+              <Mapping SourceColumn="furt_healthcodebatch" DataSetColumn="furt_healthcodebatch" />
+              <Mapping SourceColumn="furt_invvalue1" DataSetColumn="furt_invvalue1" />
+              <Mapping SourceColumn="furt_invvalue2" DataSetColumn="furt_invvalue2" />
+              <Mapping SourceColumn="furt_invvalue3" DataSetColumn="furt_invvalue3" />
+              <Mapping SourceColumn="furt_invvalue4" DataSetColumn="furt_invvalue4" />
+              <Mapping SourceColumn="furt_invvalue5" DataSetColumn="furt_invvalue5" />
+              <Mapping SourceColumn="furt_treatval1" DataSetColumn="furt_treatval1" />
+              <Mapping SourceColumn="furt_treatval2" DataSetColumn="furt_treatval2" />
+              <Mapping SourceColumn="furt_treatval3" DataSetColumn="furt_treatval3" />
+              <Mapping SourceColumn="furt_treatval4" DataSetColumn="furt_treatval4" />
+              <Mapping SourceColumn="furt_treatval5" DataSetColumn="furt_treatval5" />
+              <Mapping SourceColumn="furt_conspaymentdate" DataSetColumn="furt_conspaymentdate" />
+              <Mapping SourceColumn="furt_source" DataSetColumn="furt_source" />
+              <Mapping SourceColumn="furt_sourcecomment" DataSetColumn="furt_sourcecomment" />
+              <Mapping SourceColumn="furt_treatana" DataSetColumn="furt_treatana" />
+              <Mapping SourceColumn="furt_consfee" DataSetColumn="furt_consfee" />
+              <Mapping SourceColumn="furt_treatmentfee" DataSetColumn="furt_treatmentfee" />
+              <Mapping SourceColumn="furt_constfee" DataSetColumn="furt_constfee" />
+              <Mapping SourceColumn="furt_dummytext" DataSetColumn="furt_dummytext" />
+              <Mapping SourceColumn="furt_complete" DataSetColumn="furt_complete" />
+              <Mapping SourceColumn="furt_IncompleteComment" DataSetColumn="furt_IncompleteComment" />
+              <Mapping SourceColumn="furt_healthcodeno" DataSetColumn="furt_healthcodeno" />
+              <Mapping SourceColumn="furt_healthcodestatus" DataSetColumn="furt_healthcodestatus" />
+              <Mapping SourceColumn="furt_claimno" DataSetColumn="furt_claimno" />
+              <Mapping SourceColumn="furt_reportextra" DataSetColumn="furt_reportextra" />
+              <Mapping SourceColumn="furt_treatmentconfsent" DataSetColumn="furt_treatmentconfsent" />
+              <Mapping SourceColumn="furt_treatmentconfdate" DataSetColumn="furt_treatmentconfdate" />
+              <Mapping SourceColumn="furt_primarytreatmentid" DataSetColumn="furt_primarytreatmentid" />
+              <Mapping SourceColumn="furt_primarytreatmentcount" DataSetColumn="furt_primarytreatmentcount" />
+              <Mapping SourceColumn="oppo_primaryconsultantid" DataSetColumn="oppo_primaryconsultantid" />
+              <Mapping SourceColumn="oppo_excess" DataSetColumn="oppo_excess" />
+              <Mapping SourceColumn="oppo_authdate" DataSetColumn="oppo_authdate" />
+              <Mapping SourceColumn="oppo_authvalue" DataSetColumn="oppo_authvalue" />
+              <Mapping SourceColumn="oppo_insurer" DataSetColumn="oppo_insurer" />
+              <Mapping SourceColumn="oppo_insurercontact" DataSetColumn="oppo_insurercontact" />
+              <Mapping SourceColumn="oppo_policy" DataSetColumn="oppo_policy" />
+              <Mapping SourceColumn="oppo_consultationdate" DataSetColumn="oppo_consultationdate" />
+              <Mapping SourceColumn="oppo_insurermail" DataSetColumn="oppo_insurermail" />
+              <Mapping SourceColumn="oppo_bookingmail" DataSetColumn="oppo_bookingmail" />
+              <Mapping SourceColumn="oppo_invoicemail" DataSetColumn="oppo_invoicemail" />
+              <Mapping SourceColumn="oppo_consultantmail" DataSetColumn="oppo_consultantmail" />
+              <Mapping SourceColumn="oppo_consultantbookmail" DataSetColumn="oppo_consultantbookmail" />
+              <Mapping SourceColumn="oppo_primarytreatmentcount" DataSetColumn="oppo_primarytreatmentcount" />
+              <Mapping SourceColumn="oppo_patientinitials" DataSetColumn="oppo_patientinitials" />
+              <Mapping SourceColumn="oppo_consultantinvoiceemail" DataSetColumn="oppo_consultantinvoiceemail" />
+              <Mapping SourceColumn="furt_validated" DataSetColumn="furt_validated" />
+              <Mapping SourceColumn="furt_theatrelist" DataSetColumn="furt_theatrelist" />
+              <Mapping SourceColumn="PatientName" DataSetColumn="PatientName" />
+              <Mapping SourceColumn="furt_description1" DataSetColumn="furt_description1" />
+              <Mapping SourceColumn="furt_description2" DataSetColumn="furt_description2" />
+              <Mapping SourceColumn="furt_description3" DataSetColumn="furt_description3" />
+              <Mapping SourceColumn="furt_description4" DataSetColumn="furt_description4" />
+              <Mapping SourceColumn="furt_description5" DataSetColumn="furt_description5" />
+              <Mapping SourceColumn="furt_anaesthetic" DataSetColumn="furt_anaesthetic" />
+              <Mapping SourceColumn="furt_invdate" DataSetColumn="furt_invdate" />
+              <Mapping SourceColumn="furt_invnumber" DataSetColumn="furt_invnumber" />
+              <Mapping SourceColumn="furt_insurer" DataSetColumn="furt_insurer" />
+              <Mapping SourceColumn="TreatmentDescription" DataSetColumn="TreatmentDescription" />
+              <Mapping SourceColumn="ConsultantName" DataSetColumn="ConsultantName" />
+              <Mapping SourceColumn="furt_sagepaydate" DataSetColumn="furt_sagepaydate" />
+              <Mapping SourceColumn="furt_sagetakedate" DataSetColumn="furt_sagetakedate" />
+              <Mapping SourceColumn="pers_gmcno" DataSetColumn="pers_gmcno" />
+              <Mapping SourceColumn="PatientAddress" DataSetColumn="PatientAddress" />
+              <Mapping SourceColumn="Code1Text" DataSetColumn="Code1Text" />
+              <Mapping SourceColumn="Code2Text" DataSetColumn="Code2Text" />
+              <Mapping SourceColumn="Code3Text" DataSetColumn="Code3Text" />
+              <Mapping SourceColumn="Code4Text" DataSetColumn="Code4Text" />
+              <Mapping SourceColumn="Code5Text" DataSetColumn="Code5Text" />
+              <Mapping SourceColumn="patientAddress1" DataSetColumn="patientAddress1" />
+              <Mapping SourceColumn="patientAddress2" DataSetColumn="patientAddress2" />
+              <Mapping SourceColumn="patientAddress3" DataSetColumn="patientAddress3" />
+              <Mapping SourceColumn="patientAddress4" DataSetColumn="patientAddress4" />
+              <Mapping SourceColumn="patientAddress5" DataSetColumn="patientAddress5" />
+              <Mapping SourceColumn="patientCity" DataSetColumn="patientCity" />
+              <Mapping SourceColumn="patientCounty" DataSetColumn="patientCounty" />
+              <Mapping SourceColumn="patientPostcode" DataSetColumn="patientPostcode" />
+              <Mapping SourceColumn="ConsultantAddress1" DataSetColumn="ConsultantAddress1" />
+              <Mapping SourceColumn="ConsultantAddress2" DataSetColumn="ConsultantAddress2" />
+              <Mapping SourceColumn="ConsultantAddress3" DataSetColumn="ConsultantAddress3" />
+              <Mapping SourceColumn="ConsultantAddress4" DataSetColumn="ConsultantAddress4" />
+              <Mapping SourceColumn="ConsultantAddress5" DataSetColumn="ConsultantAddress5" />
+              <Mapping SourceColumn="ConsultantCity" DataSetColumn="ConsultantCity" />
+              <Mapping SourceColumn="ConsultantCounty" DataSetColumn="ConsultantCounty" />
+              <Mapping SourceColumn="ConsultantPostcode" DataSetColumn="ConsultantPostcode" />
+              <Mapping SourceColumn="InsurerName" DataSetColumn="InsurerName" />
+              <Mapping SourceColumn="InsurerAddress1" DataSetColumn="InsurerAddress1" />
+              <Mapping SourceColumn="InsurerAddress2" DataSetColumn="InsurerAddress2" />
+              <Mapping SourceColumn="InsurerAddress3" DataSetColumn="InsurerAddress3" />
+              <Mapping SourceColumn="InsurerAddress4" DataSetColumn="InsurerAddress4" />
+              <Mapping SourceColumn="InsurerAddress5" DataSetColumn="InsurerAddress5" />
+              <Mapping SourceColumn="InsurerCity" DataSetColumn="InsurerCity" />
+              <Mapping SourceColumn="InsurerCounty" DataSetColumn="InsurerCounty" />
+              <Mapping SourceColumn="InsurerPostcode" DataSetColumn="InsurerPostcode" />
+              <Mapping SourceColumn="ConsultantBalance" DataSetColumn="ConsultantBalance" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Invoice" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="Invoice" msprop:Generator_UserDSName="Invoice">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vw_InvoiceTemplate" msprop:Generator_TableClassName="vw_InvoiceTemplateDataTable" msprop:Generator_TableVarName="tablevw_InvoiceTemplate" msprop:Generator_TablePropName="vw_InvoiceTemplate" msprop:Generator_RowDeletingName="vw_InvoiceTemplateRowDeleting" msprop:Generator_UserTableName="vw_InvoiceTemplate" msprop:Generator_RowChangingName="vw_InvoiceTemplateRowChanging" msprop:Generator_RowEvHandlerName="vw_InvoiceTemplateRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_InvoiceTemplateRowDeleted" msprop:Generator_RowEvArgName="vw_InvoiceTemplateRowChangeEvent" msprop:Generator_RowChangedName="vw_InvoiceTemplateRowChanged" msprop:Generator_RowClassName="vw_InvoiceTemplateRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="furt_FurtherID" msprop:Generator_ColumnVarNameInTable="columnfurt_FurtherID" msprop:Generator_ColumnPropNameInRow="furt_FurtherID" msprop:Generator_ColumnPropNameInTable="furt_FurtherIDColumn" msprop:Generator_UserColumnName="furt_FurtherID" type="xs:int" />
+              <xs:element name="furt_date" msprop:Generator_ColumnVarNameInTable="columnfurt_date" msprop:Generator_ColumnPropNameInRow="furt_date" msprop:Generator_ColumnPropNameInTable="furt_dateColumn" msprop:Generator_UserColumnName="furt_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="furt_conultantid" msprop:Generator_ColumnVarNameInTable="columnfurt_conultantid" msprop:Generator_ColumnPropNameInRow="furt_conultantid" msprop:Generator_ColumnPropNameInTable="furt_conultantidColumn" msprop:Generator_UserColumnName="furt_conultantid" type="xs:int" minOccurs="0" />
+              <xs:element name="furt_treattype" msprop:Generator_ColumnVarNameInTable="columnfurt_treattype" msprop:Generator_ColumnPropNameInRow="furt_treattype" msprop:Generator_ColumnPropNameInTable="furt_treattypeColumn" msprop:Generator_UserColumnName="furt_treattype" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_los" msprop:Generator_ColumnVarNameInTable="columnfurt_los" msprop:Generator_ColumnPropNameInRow="furt_los" msprop:Generator_ColumnPropNameInTable="furt_losColumn" msprop:Generator_UserColumnName="furt_los" type="xs:int" minOccurs="0" />
+              <xs:element name="oppo_consultdate" msprop:Generator_ColumnVarNameInTable="columnoppo_consultdate" msprop:Generator_ColumnPropNameInRow="oppo_consultdate" msprop:Generator_ColumnPropNameInTable="oppo_consultdateColumn" msprop:Generator_UserColumnName="oppo_consultdate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="furt_Name" msprop:Generator_ColumnVarNameInTable="columnfurt_Name" msprop:Generator_ColumnPropNameInRow="furt_Name" msprop:Generator_ColumnPropNameInTable="furt_NameColumn" msprop:Generator_UserColumnName="furt_Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_Status" msprop:Generator_ColumnVarNameInTable="columnfurt_Status" msprop:Generator_ColumnPropNameInRow="furt_Status" msprop:Generator_ColumnPropNameInTable="furt_StatusColumn" msprop:Generator_UserColumnName="furt_Status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_OpportunityId" msprop:Generator_ColumnVarNameInTable="columnfurt_OpportunityId" msprop:Generator_ColumnPropNameInRow="furt_OpportunityId" msprop:Generator_ColumnPropNameInTable="furt_OpportunityIdColumn" msprop:Generator_UserColumnName="furt_OpportunityId" type="xs:int" minOccurs="0" />
+              <xs:element name="furt_diagnostics" msprop:Generator_ColumnVarNameInTable="columnfurt_diagnostics" msprop:Generator_ColumnPropNameInRow="furt_diagnostics" msprop:Generator_ColumnPropNameInTable="furt_diagnosticsColumn" msprop:Generator_UserColumnName="furt_diagnostics" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_oss" msprop:Generator_ColumnVarNameInTable="columnfurt_oss" msprop:Generator_ColumnPropNameInRow="furt_oss" msprop:Generator_ColumnPropNameInTable="furt_ossColumn" msprop:Generator_UserColumnName="furt_oss" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_treatbooked" msprop:Generator_ColumnVarNameInTable="columnfurt_treatbooked" msprop:Generator_ColumnPropNameInRow="furt_treatbooked" msprop:Generator_ColumnPropNameInTable="furt_treatbookedColumn" msprop:Generator_UserColumnName="furt_treatbooked" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_location" msprop:Generator_ColumnVarNameInTable="columnfurt_location" msprop:Generator_ColumnPropNameInRow="furt_location" msprop:Generator_ColumnPropNameInTable="furt_locationColumn" msprop:Generator_UserColumnName="furt_location" type="xs:int" minOccurs="0" />
+              <xs:element name="furt_code" msprop:Generator_ColumnVarNameInTable="columnfurt_code" msprop:Generator_ColumnPropNameInRow="furt_code" msprop:Generator_ColumnPropNameInTable="furt_codeColumn" msprop:Generator_UserColumnName="furt_code" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_treatment" msprop:Generator_ColumnVarNameInTable="columnfurt_treatment" msprop:Generator_ColumnPropNameInRow="furt_treatment" msprop:Generator_ColumnPropNameInTable="furt_treatmentColumn" msprop:Generator_UserColumnName="furt_treatment" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_invamount" msprop:Generator_ColumnVarNameInTable="columnfurt_invamount" msprop:Generator_ColumnPropNameInRow="furt_invamount" msprop:Generator_ColumnPropNameInTable="furt_invamountColumn" msprop:Generator_UserColumnName="furt_invamount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="furt_invvat" msprop:Generator_ColumnVarNameInTable="columnfurt_invvat" msprop:Generator_ColumnPropNameInRow="furt_invvat" msprop:Generator_ColumnPropNameInTable="furt_invvatColumn" msprop:Generator_UserColumnName="furt_invvat" type="xs:decimal" minOccurs="0" />
+              <xs:element name="furt_patientid" msprop:Generator_ColumnVarNameInTable="columnfurt_patientid" msprop:Generator_ColumnPropNameInRow="furt_patientid" msprop:Generator_ColumnPropNameInTable="furt_patientidColumn" msprop:Generator_UserColumnName="furt_patientid" type="xs:int" minOccurs="0" />
+              <xs:element name="furt_customerref" msprop:Generator_ColumnVarNameInTable="columnfurt_customerref" msprop:Generator_ColumnPropNameInRow="furt_customerref" msprop:Generator_ColumnPropNameInTable="furt_customerrefColumn" msprop:Generator_UserColumnName="furt_customerref" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_asnotes" msprop:Generator_ColumnVarNameInTable="columnfurt_asnotes" msprop:Generator_ColumnPropNameInRow="furt_asnotes" msprop:Generator_ColumnPropNameInTable="furt_asnotesColumn" msprop:Generator_UserColumnName="furt_asnotes" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1073741823" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_nomcode" msprop:Generator_ColumnVarNameInTable="columnfurt_nomcode" msprop:Generator_ColumnPropNameInRow="furt_nomcode" msprop:Generator_ColumnPropNameInTable="furt_nomcodeColumn" msprop:Generator_UserColumnName="furt_nomcode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_Dept" msprop:Generator_ColumnVarNameInTable="columnfurt_Dept" msprop:Generator_ColumnPropNameInRow="furt_Dept" msprop:Generator_ColumnPropNameInTable="furt_DeptColumn" msprop:Generator_UserColumnName="furt_Dept" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_daycase" msprop:Generator_ColumnVarNameInTable="columnfurt_daycase" msprop:Generator_ColumnPropNameInRow="furt_daycase" msprop:Generator_ColumnPropNameInTable="furt_daycaseColumn" msprop:Generator_UserColumnName="furt_daycase" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_daycase1" msprop:Generator_ColumnVarNameInTable="columnfurt_daycase1" msprop:Generator_ColumnPropNameInRow="furt_daycase1" msprop:Generator_ColumnPropNameInTable="furt_daycase1Column" msprop:Generator_UserColumnName="furt_daycase1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_actualdateconfirmed" msprop:Generator_ColumnVarNameInTable="columnfurt_actualdateconfirmed" msprop:Generator_ColumnPropNameInRow="furt_actualdateconfirmed" msprop:Generator_ColumnPropNameInTable="furt_actualdateconfirmedColumn" msprop:Generator_UserColumnName="furt_actualdateconfirmed" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="furt_Code1" msprop:Generator_ColumnVarNameInTable="columnfurt_Code1" msprop:Generator_ColumnPropNameInRow="furt_Code1" msprop:Generator_ColumnPropNameInTable="furt_Code1Column" msprop:Generator_UserColumnName="furt_Code1" type="xs:int" minOccurs="0" />
+              <xs:element name="furt_code2" msprop:Generator_ColumnVarNameInTable="columnfurt_code2" msprop:Generator_ColumnPropNameInRow="furt_code2" msprop:Generator_ColumnPropNameInTable="furt_code2Column" msprop:Generator_UserColumnName="furt_code2" type="xs:int" minOccurs="0" />
+              <xs:element name="furt_code3" msprop:Generator_ColumnVarNameInTable="columnfurt_code3" msprop:Generator_ColumnPropNameInRow="furt_code3" msprop:Generator_ColumnPropNameInTable="furt_code3Column" msprop:Generator_UserColumnName="furt_code3" type="xs:int" minOccurs="0" />
+              <xs:element name="furt_SI1" msprop:Generator_ColumnVarNameInTable="columnfurt_SI1" msprop:Generator_ColumnPropNameInRow="furt_SI1" msprop:Generator_ColumnPropNameInTable="furt_SI1Column" msprop:Generator_UserColumnName="furt_SI1" type="xs:decimal" minOccurs="0" />
+              <xs:element name="furt_SITotal" msprop:Generator_ColumnVarNameInTable="columnfurt_SITotal" msprop:Generator_ColumnPropNameInRow="furt_SITotal" msprop:Generator_ColumnPropNameInTable="furt_SITotalColumn" msprop:Generator_UserColumnName="furt_SITotal" type="xs:decimal" minOccurs="0" />
+              <xs:element name="furt_PITotal" msprop:Generator_ColumnVarNameInTable="columnfurt_PITotal" msprop:Generator_ColumnPropNameInRow="furt_PITotal" msprop:Generator_ColumnPropNameInTable="furt_PITotalColumn" msprop:Generator_UserColumnName="furt_PITotal" type="xs:decimal" minOccurs="0" />
+              <xs:element name="furt_pinominal1" msprop:Generator_ColumnVarNameInTable="columnfurt_pinominal1" msprop:Generator_ColumnPropNameInRow="furt_pinominal1" msprop:Generator_ColumnPropNameInTable="furt_pinominal1Column" msprop:Generator_UserColumnName="furt_pinominal1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_pinominal2" msprop:Generator_ColumnVarNameInTable="columnfurt_pinominal2" msprop:Generator_ColumnPropNameInRow="furt_pinominal2" msprop:Generator_ColumnPropNameInTable="furt_pinominal2Column" msprop:Generator_UserColumnName="furt_pinominal2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_pinominal3" msprop:Generator_ColumnVarNameInTable="columnfurt_pinominal3" msprop:Generator_ColumnPropNameInRow="furt_pinominal3" msprop:Generator_ColumnPropNameInTable="furt_pinominal3Column" msprop:Generator_UserColumnName="furt_pinominal3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_sinominal1" msprop:Generator_ColumnVarNameInTable="columnfurt_sinominal1" msprop:Generator_ColumnPropNameInRow="furt_sinominal1" msprop:Generator_ColumnPropNameInTable="furt_sinominal1Column" msprop:Generator_UserColumnName="furt_sinominal1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_sinominal2" msprop:Generator_ColumnVarNameInTable="columnfurt_sinominal2" msprop:Generator_ColumnPropNameInRow="furt_sinominal2" msprop:Generator_ColumnPropNameInTable="furt_sinominal2Column" msprop:Generator_UserColumnName="furt_sinominal2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_sinominal3" msprop:Generator_ColumnVarNameInTable="columnfurt_sinominal3" msprop:Generator_ColumnPropNameInRow="furt_sinominal3" msprop:Generator_ColumnPropNameInTable="furt_sinominal3Column" msprop:Generator_UserColumnName="furt_sinominal3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_RxPerformed" msprop:Generator_ColumnVarNameInTable="columnfurt_RxPerformed" msprop:Generator_ColumnPropNameInRow="furt_RxPerformed" msprop:Generator_ColumnPropNameInTable="furt_RxPerformedColumn" msprop:Generator_UserColumnName="furt_RxPerformed" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_WhatNext" msprop:Generator_ColumnVarNameInTable="columnfurt_WhatNext" msprop:Generator_ColumnPropNameInRow="furt_WhatNext" msprop:Generator_ColumnPropNameInTable="furt_WhatNextColumn" msprop:Generator_UserColumnName="furt_WhatNext" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_consulfirstname" msprop:Generator_ColumnVarNameInTable="columnfurt_consulfirstname" msprop:Generator_ColumnPropNameInRow="furt_consulfirstname" msprop:Generator_ColumnPropNameInTable="furt_consulfirstnameColumn" msprop:Generator_UserColumnName="furt_consulfirstname" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_consLastName" msprop:Generator_ColumnVarNameInTable="columnfurt_consLastName" msprop:Generator_ColumnPropNameInRow="furt_consLastName" msprop:Generator_ColumnPropNameInTable="furt_consLastNameColumn" msprop:Generator_UserColumnName="furt_consLastName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_consAddress1" msprop:Generator_ColumnVarNameInTable="columnfurt_consAddress1" msprop:Generator_ColumnPropNameInRow="furt_consAddress1" msprop:Generator_ColumnPropNameInTable="furt_consAddress1Column" msprop:Generator_UserColumnName="furt_consAddress1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_consAddress2" msprop:Generator_ColumnVarNameInTable="columnfurt_consAddress2" msprop:Generator_ColumnPropNameInRow="furt_consAddress2" msprop:Generator_ColumnPropNameInTable="furt_consAddress2Column" msprop:Generator_UserColumnName="furt_consAddress2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_consAddress3" msprop:Generator_ColumnVarNameInTable="columnfurt_consAddress3" msprop:Generator_ColumnPropNameInRow="furt_consAddress3" msprop:Generator_ColumnPropNameInTable="furt_consAddress3Column" msprop:Generator_UserColumnName="furt_consAddress3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_consaddress4" msprop:Generator_ColumnVarNameInTable="columnfurt_consaddress4" msprop:Generator_ColumnPropNameInRow="furt_consaddress4" msprop:Generator_ColumnPropNameInTable="furt_consaddress4Column" msprop:Generator_UserColumnName="furt_consaddress4" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_conspostcode" msprop:Generator_ColumnVarNameInTable="columnfurt_conspostcode" msprop:Generator_ColumnPropNameInRow="furt_conspostcode" msprop:Generator_ColumnPropNameInTable="furt_conspostcodeColumn" msprop:Generator_UserColumnName="furt_conspostcode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_policy" msprop:Generator_ColumnVarNameInTable="columnfurt_policy" msprop:Generator_ColumnPropNameInRow="furt_policy" msprop:Generator_ColumnPropNameInTable="furt_policyColumn" msprop:Generator_UserColumnName="furt_policy" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_patientname" msprop:Generator_ColumnVarNameInTable="columnfurt_patientname" msprop:Generator_ColumnPropNameInRow="furt_patientname" msprop:Generator_ColumnPropNameInTable="furt_patientnameColumn" msprop:Generator_UserColumnName="furt_patientname" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_patientDOB" msprop:Generator_ColumnVarNameInTable="columnfurt_patientDOB" msprop:Generator_ColumnPropNameInRow="furt_patientDOB" msprop:Generator_ColumnPropNameInTable="furt_patientDOBColumn" msprop:Generator_UserColumnName="furt_patientDOB" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="furt_codetext2" msprop:Generator_ColumnVarNameInTable="columnfurt_codetext2" msprop:Generator_ColumnPropNameInRow="furt_codetext2" msprop:Generator_ColumnPropNameInTable="furt_codetext2Column" msprop:Generator_UserColumnName="furt_codetext2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_codetext1" msprop:Generator_ColumnVarNameInTable="columnfurt_codetext1" msprop:Generator_ColumnPropNameInRow="furt_codetext1" msprop:Generator_ColumnPropNameInTable="furt_codetext1Column" msprop:Generator_UserColumnName="furt_codetext1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_codetext3" msprop:Generator_ColumnVarNameInTable="columnfurt_codetext3" msprop:Generator_ColumnPropNameInRow="furt_codetext3" msprop:Generator_ColumnPropNameInTable="furt_codetext3Column" msprop:Generator_UserColumnName="furt_codetext3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_SageInvoice" msprop:Generator_ColumnVarNameInTable="columnfurt_SageInvoice" msprop:Generator_ColumnPropNameInRow="furt_SageInvoice" msprop:Generator_ColumnPropNameInTable="furt_SageInvoiceColumn" msprop:Generator_UserColumnName="furt_SageInvoice" type="xs:int" minOccurs="0" />
+              <xs:element name="furt_ReceiptedInvoice" msprop:Generator_ColumnVarNameInTable="columnfurt_ReceiptedInvoice" msprop:Generator_ColumnPropNameInRow="furt_ReceiptedInvoice" msprop:Generator_ColumnPropNameInTable="furt_ReceiptedInvoiceColumn" msprop:Generator_UserColumnName="furt_ReceiptedInvoice" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_DiagnosticTests" msprop:Generator_ColumnVarNameInTable="columnfurt_DiagnosticTests" msprop:Generator_ColumnPropNameInRow="furt_DiagnosticTests" msprop:Generator_ColumnPropNameInTable="furt_DiagnosticTestsColumn" msprop:Generator_UserColumnName="furt_DiagnosticTests" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_code4" msprop:Generator_ColumnVarNameInTable="columnfurt_code4" msprop:Generator_ColumnPropNameInRow="furt_code4" msprop:Generator_ColumnPropNameInTable="furt_code4Column" msprop:Generator_UserColumnName="furt_code4" type="xs:int" minOccurs="0" />
+              <xs:element name="furt_code5" msprop:Generator_ColumnVarNameInTable="columnfurt_code5" msprop:Generator_ColumnPropNameInRow="furt_code5" msprop:Generator_ColumnPropNameInTable="furt_code5Column" msprop:Generator_UserColumnName="furt_code5" type="xs:int" minOccurs="0" />
+              <xs:element name="furt_pi4" msprop:Generator_ColumnVarNameInTable="columnfurt_pi4" msprop:Generator_ColumnPropNameInRow="furt_pi4" msprop:Generator_ColumnPropNameInTable="furt_pi4Column" msprop:Generator_UserColumnName="furt_pi4" type="xs:decimal" minOccurs="0" />
+              <xs:element name="furt_pi5" msprop:Generator_ColumnVarNameInTable="columnfurt_pi5" msprop:Generator_ColumnPropNameInRow="furt_pi5" msprop:Generator_ColumnPropNameInTable="furt_pi5Column" msprop:Generator_UserColumnName="furt_pi5" type="xs:decimal" minOccurs="0" />
+              <xs:element name="furt_si5" msprop:Generator_ColumnVarNameInTable="columnfurt_si5" msprop:Generator_ColumnPropNameInRow="furt_si5" msprop:Generator_ColumnPropNameInTable="furt_si5Column" msprop:Generator_UserColumnName="furt_si5" type="xs:decimal" minOccurs="0" />
+              <xs:element name="furt_sinominal4" msprop:Generator_ColumnVarNameInTable="columnfurt_sinominal4" msprop:Generator_ColumnPropNameInRow="furt_sinominal4" msprop:Generator_ColumnPropNameInTable="furt_sinominal4Column" msprop:Generator_UserColumnName="furt_sinominal4" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_sinominal5" msprop:Generator_ColumnVarNameInTable="columnfurt_sinominal5" msprop:Generator_ColumnPropNameInRow="furt_sinominal5" msprop:Generator_ColumnPropNameInTable="furt_sinominal5Column" msprop:Generator_UserColumnName="furt_sinominal5" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_pinominal4" msprop:Generator_ColumnVarNameInTable="columnfurt_pinominal4" msprop:Generator_ColumnPropNameInRow="furt_pinominal4" msprop:Generator_ColumnPropNameInTable="furt_pinominal4Column" msprop:Generator_UserColumnName="furt_pinominal4" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_pinominal5" msprop:Generator_ColumnVarNameInTable="columnfurt_pinominal5" msprop:Generator_ColumnPropNameInRow="furt_pinominal5" msprop:Generator_ColumnPropNameInTable="furt_pinominal5Column" msprop:Generator_UserColumnName="furt_pinominal5" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_si4" msprop:Generator_ColumnVarNameInTable="columnfurt_si4" msprop:Generator_ColumnPropNameInRow="furt_si4" msprop:Generator_ColumnPropNameInTable="furt_si4Column" msprop:Generator_UserColumnName="furt_si4" type="xs:decimal" minOccurs="0" />
+              <xs:element name="furt_codetext4" msprop:Generator_ColumnVarNameInTable="columnfurt_codetext4" msprop:Generator_ColumnPropNameInRow="furt_codetext4" msprop:Generator_ColumnPropNameInTable="furt_codetext4Column" msprop:Generator_UserColumnName="furt_codetext4" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_codetext5" msprop:Generator_ColumnVarNameInTable="columnfurt_codetext5" msprop:Generator_ColumnPropNameInRow="furt_codetext5" msprop:Generator_ColumnPropNameInTable="furt_codetext5Column" msprop:Generator_UserColumnName="furt_codetext5" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_recinvsent" msprop:Generator_ColumnVarNameInTable="columnfurt_recinvsent" msprop:Generator_ColumnPropNameInRow="furt_recinvsent" msprop:Generator_ColumnPropNameInTable="furt_recinvsentColumn" msprop:Generator_UserColumnName="furt_recinvsent" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="furt_recinvsentmethod" msprop:Generator_ColumnVarNameInTable="columnfurt_recinvsentmethod" msprop:Generator_ColumnPropNameInRow="furt_recinvsentmethod" msprop:Generator_ColumnPropNameInTable="furt_recinvsentmethodColumn" msprop:Generator_UserColumnName="furt_recinvsentmethod" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_healthcodebatch" msprop:Generator_ColumnVarNameInTable="columnfurt_healthcodebatch" msprop:Generator_ColumnPropNameInRow="furt_healthcodebatch" msprop:Generator_ColumnPropNameInTable="furt_healthcodebatchColumn" msprop:Generator_UserColumnName="furt_healthcodebatch" type="xs:int" minOccurs="0" />
+              <xs:element name="furt_invvalue1" msprop:Generator_ColumnVarNameInTable="columnfurt_invvalue1" msprop:Generator_ColumnPropNameInRow="furt_invvalue1" msprop:Generator_ColumnPropNameInTable="furt_invvalue1Column" msprop:Generator_UserColumnName="furt_invvalue1" type="xs:decimal" minOccurs="0" />
+              <xs:element name="furt_invvalue2" msprop:Generator_ColumnVarNameInTable="columnfurt_invvalue2" msprop:Generator_ColumnPropNameInRow="furt_invvalue2" msprop:Generator_ColumnPropNameInTable="furt_invvalue2Column" msprop:Generator_UserColumnName="furt_invvalue2" type="xs:decimal" minOccurs="0" />
+              <xs:element name="furt_invvalue3" msprop:Generator_ColumnVarNameInTable="columnfurt_invvalue3" msprop:Generator_ColumnPropNameInRow="furt_invvalue3" msprop:Generator_ColumnPropNameInTable="furt_invvalue3Column" msprop:Generator_UserColumnName="furt_invvalue3" type="xs:decimal" minOccurs="0" />
+              <xs:element name="furt_invvalue4" msprop:Generator_ColumnVarNameInTable="columnfurt_invvalue4" msprop:Generator_ColumnPropNameInRow="furt_invvalue4" msprop:Generator_ColumnPropNameInTable="furt_invvalue4Column" msprop:Generator_UserColumnName="furt_invvalue4" type="xs:decimal" minOccurs="0" />
+              <xs:element name="furt_invvalue5" msprop:Generator_ColumnVarNameInTable="columnfurt_invvalue5" msprop:Generator_ColumnPropNameInRow="furt_invvalue5" msprop:Generator_ColumnPropNameInTable="furt_invvalue5Column" msprop:Generator_UserColumnName="furt_invvalue5" type="xs:decimal" minOccurs="0" />
+              <xs:element name="furt_treatval1" msprop:Generator_ColumnVarNameInTable="columnfurt_treatval1" msprop:Generator_ColumnPropNameInRow="furt_treatval1" msprop:Generator_ColumnPropNameInTable="furt_treatval1Column" msprop:Generator_UserColumnName="furt_treatval1" type="xs:decimal" minOccurs="0" />
+              <xs:element name="furt_treatval2" msprop:Generator_ColumnVarNameInTable="columnfurt_treatval2" msprop:Generator_ColumnPropNameInRow="furt_treatval2" msprop:Generator_ColumnPropNameInTable="furt_treatval2Column" msprop:Generator_UserColumnName="furt_treatval2" type="xs:decimal" minOccurs="0" />
+              <xs:element name="furt_treatval3" msprop:Generator_ColumnVarNameInTable="columnfurt_treatval3" msprop:Generator_ColumnPropNameInRow="furt_treatval3" msprop:Generator_ColumnPropNameInTable="furt_treatval3Column" msprop:Generator_UserColumnName="furt_treatval3" type="xs:decimal" minOccurs="0" />
+              <xs:element name="furt_treatval4" msprop:Generator_ColumnVarNameInTable="columnfurt_treatval4" msprop:Generator_ColumnPropNameInRow="furt_treatval4" msprop:Generator_ColumnPropNameInTable="furt_treatval4Column" msprop:Generator_UserColumnName="furt_treatval4" type="xs:decimal" minOccurs="0" />
+              <xs:element name="furt_treatval5" msprop:Generator_ColumnVarNameInTable="columnfurt_treatval5" msprop:Generator_ColumnPropNameInRow="furt_treatval5" msprop:Generator_ColumnPropNameInTable="furt_treatval5Column" msprop:Generator_UserColumnName="furt_treatval5" type="xs:decimal" minOccurs="0" />
+              <xs:element name="furt_conspaymentdate" msprop:Generator_ColumnVarNameInTable="columnfurt_conspaymentdate" msprop:Generator_ColumnPropNameInRow="furt_conspaymentdate" msprop:Generator_ColumnPropNameInTable="furt_conspaymentdateColumn" msprop:Generator_UserColumnName="furt_conspaymentdate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="furt_source" msprop:Generator_ColumnVarNameInTable="columnfurt_source" msprop:Generator_ColumnPropNameInRow="furt_source" msprop:Generator_ColumnPropNameInTable="furt_sourceColumn" msprop:Generator_UserColumnName="furt_source" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_sourcecomment" msprop:Generator_ColumnVarNameInTable="columnfurt_sourcecomment" msprop:Generator_ColumnPropNameInRow="furt_sourcecomment" msprop:Generator_ColumnPropNameInTable="furt_sourcecommentColumn" msprop:Generator_UserColumnName="furt_sourcecomment" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1073741823" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_treatana" msprop:Generator_ColumnVarNameInTable="columnfurt_treatana" msprop:Generator_ColumnPropNameInRow="furt_treatana" msprop:Generator_ColumnPropNameInTable="furt_treatanaColumn" msprop:Generator_UserColumnName="furt_treatana" type="xs:decimal" minOccurs="0" />
+              <xs:element name="furt_consfee" msprop:Generator_ColumnVarNameInTable="columnfurt_consfee" msprop:Generator_ColumnPropNameInRow="furt_consfee" msprop:Generator_ColumnPropNameInTable="furt_consfeeColumn" msprop:Generator_UserColumnName="furt_consfee" type="xs:decimal" minOccurs="0" />
+              <xs:element name="furt_treatmentfee" msprop:Generator_ColumnVarNameInTable="columnfurt_treatmentfee" msprop:Generator_ColumnPropNameInRow="furt_treatmentfee" msprop:Generator_ColumnPropNameInTable="furt_treatmentfeeColumn" msprop:Generator_UserColumnName="furt_treatmentfee" type="xs:decimal" minOccurs="0" />
+              <xs:element name="furt_constfee" msprop:Generator_ColumnVarNameInTable="columnfurt_constfee" msprop:Generator_ColumnPropNameInRow="furt_constfee" msprop:Generator_ColumnPropNameInTable="furt_constfeeColumn" msprop:Generator_UserColumnName="furt_constfee" type="xs:decimal" minOccurs="0" />
+              <xs:element name="furt_dummytext" msprop:Generator_ColumnVarNameInTable="columnfurt_dummytext" msprop:Generator_ColumnPropNameInRow="furt_dummytext" msprop:Generator_ColumnPropNameInTable="furt_dummytextColumn" msprop:Generator_UserColumnName="furt_dummytext" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_complete" msprop:Generator_ColumnVarNameInTable="columnfurt_complete" msprop:Generator_ColumnPropNameInRow="furt_complete" msprop:Generator_ColumnPropNameInTable="furt_completeColumn" msprop:Generator_UserColumnName="furt_complete" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_IncompleteComment" msprop:Generator_ColumnVarNameInTable="columnfurt_IncompleteComment" msprop:Generator_ColumnPropNameInRow="furt_IncompleteComment" msprop:Generator_ColumnPropNameInTable="furt_IncompleteCommentColumn" msprop:Generator_UserColumnName="furt_IncompleteComment" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_healthcodeno" msprop:Generator_ColumnVarNameInTable="columnfurt_healthcodeno" msprop:Generator_ColumnPropNameInRow="furt_healthcodeno" msprop:Generator_ColumnPropNameInTable="furt_healthcodenoColumn" msprop:Generator_UserColumnName="furt_healthcodeno" type="xs:int" minOccurs="0" />
+              <xs:element name="furt_healthcodestatus" msprop:Generator_ColumnVarNameInTable="columnfurt_healthcodestatus" msprop:Generator_ColumnPropNameInRow="furt_healthcodestatus" msprop:Generator_ColumnPropNameInTable="furt_healthcodestatusColumn" msprop:Generator_UserColumnName="furt_healthcodestatus" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_claimno" msprop:Generator_ColumnVarNameInTable="columnfurt_claimno" msprop:Generator_ColumnPropNameInRow="furt_claimno" msprop:Generator_ColumnPropNameInTable="furt_claimnoColumn" msprop:Generator_UserColumnName="furt_claimno" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_reportextra" msprop:Generator_ColumnVarNameInTable="columnfurt_reportextra" msprop:Generator_ColumnPropNameInRow="furt_reportextra" msprop:Generator_ColumnPropNameInTable="furt_reportextraColumn" msprop:Generator_UserColumnName="furt_reportextra" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_treatmentconfsent" msprop:Generator_ColumnVarNameInTable="columnfurt_treatmentconfsent" msprop:Generator_ColumnPropNameInRow="furt_treatmentconfsent" msprop:Generator_ColumnPropNameInTable="furt_treatmentconfsentColumn" msprop:Generator_UserColumnName="furt_treatmentconfsent" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_treatmentconfdate" msprop:Generator_ColumnVarNameInTable="columnfurt_treatmentconfdate" msprop:Generator_ColumnPropNameInRow="furt_treatmentconfdate" msprop:Generator_ColumnPropNameInTable="furt_treatmentconfdateColumn" msprop:Generator_UserColumnName="furt_treatmentconfdate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="furt_primarytreatmentid" msprop:Generator_ColumnVarNameInTable="columnfurt_primarytreatmentid" msprop:Generator_ColumnPropNameInRow="furt_primarytreatmentid" msprop:Generator_ColumnPropNameInTable="furt_primarytreatmentidColumn" msprop:Generator_UserColumnName="furt_primarytreatmentid" type="xs:int" minOccurs="0" />
+              <xs:element name="furt_primarytreatmentcount" msprop:Generator_ColumnVarNameInTable="columnfurt_primarytreatmentcount" msprop:Generator_ColumnPropNameInRow="furt_primarytreatmentcount" msprop:Generator_ColumnPropNameInTable="furt_primarytreatmentcountColumn" msprop:Generator_UserColumnName="furt_primarytreatmentcount" type="xs:int" minOccurs="0" />
+              <xs:element name="oppo_primaryconsultantid" msprop:Generator_ColumnVarNameInTable="columnoppo_primaryconsultantid" msprop:Generator_ColumnPropNameInRow="oppo_primaryconsultantid" msprop:Generator_ColumnPropNameInTable="oppo_primaryconsultantidColumn" msprop:Generator_UserColumnName="oppo_primaryconsultantid" type="xs:int" minOccurs="0" />
+              <xs:element name="oppo_excess" msprop:Generator_ColumnVarNameInTable="columnoppo_excess" msprop:Generator_ColumnPropNameInRow="oppo_excess" msprop:Generator_ColumnPropNameInTable="oppo_excessColumn" msprop:Generator_UserColumnName="oppo_excess" type="xs:decimal" minOccurs="0" />
+              <xs:element name="oppo_authdate" msprop:Generator_ColumnVarNameInTable="columnoppo_authdate" msprop:Generator_ColumnPropNameInRow="oppo_authdate" msprop:Generator_ColumnPropNameInTable="oppo_authdateColumn" msprop:Generator_UserColumnName="oppo_authdate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="oppo_authvalue" msprop:Generator_ColumnVarNameInTable="columnoppo_authvalue" msprop:Generator_ColumnPropNameInRow="oppo_authvalue" msprop:Generator_ColumnPropNameInTable="oppo_authvalueColumn" msprop:Generator_UserColumnName="oppo_authvalue" type="xs:decimal" minOccurs="0" />
+              <xs:element name="oppo_insurer" msprop:Generator_ColumnVarNameInTable="columnoppo_insurer" msprop:Generator_ColumnPropNameInRow="oppo_insurer" msprop:Generator_ColumnPropNameInTable="oppo_insurerColumn" msprop:Generator_UserColumnName="oppo_insurer" type="xs:int" minOccurs="0" />
+              <xs:element name="oppo_insurercontact" msprop:Generator_ColumnVarNameInTable="columnoppo_insurercontact" msprop:Generator_ColumnPropNameInRow="oppo_insurercontact" msprop:Generator_ColumnPropNameInTable="oppo_insurercontactColumn" msprop:Generator_UserColumnName="oppo_insurercontact" type="xs:int" minOccurs="0" />
+              <xs:element name="oppo_policy" msprop:Generator_ColumnVarNameInTable="columnoppo_policy" msprop:Generator_ColumnPropNameInRow="oppo_policy" msprop:Generator_ColumnPropNameInTable="oppo_policyColumn" msprop:Generator_UserColumnName="oppo_policy" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="oppo_consultationdate" msprop:Generator_ColumnVarNameInTable="columnoppo_consultationdate" msprop:Generator_ColumnPropNameInRow="oppo_consultationdate" msprop:Generator_ColumnPropNameInTable="oppo_consultationdateColumn" msprop:Generator_UserColumnName="oppo_consultationdate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="oppo_insurermail" msprop:Generator_ColumnVarNameInTable="columnoppo_insurermail" msprop:Generator_ColumnPropNameInRow="oppo_insurermail" msprop:Generator_ColumnPropNameInTable="oppo_insurermailColumn" msprop:Generator_UserColumnName="oppo_insurermail" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="oppo_bookingmail" msprop:Generator_ColumnVarNameInTable="columnoppo_bookingmail" msprop:Generator_ColumnPropNameInRow="oppo_bookingmail" msprop:Generator_ColumnPropNameInTable="oppo_bookingmailColumn" msprop:Generator_UserColumnName="oppo_bookingmail" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="oppo_invoicemail" msprop:Generator_ColumnVarNameInTable="columnoppo_invoicemail" msprop:Generator_ColumnPropNameInRow="oppo_invoicemail" msprop:Generator_ColumnPropNameInTable="oppo_invoicemailColumn" msprop:Generator_UserColumnName="oppo_invoicemail" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="oppo_consultantmail" msprop:Generator_ColumnVarNameInTable="columnoppo_consultantmail" msprop:Generator_ColumnPropNameInRow="oppo_consultantmail" msprop:Generator_ColumnPropNameInTable="oppo_consultantmailColumn" msprop:Generator_UserColumnName="oppo_consultantmail" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="oppo_consultantbookmail" msprop:Generator_ColumnVarNameInTable="columnoppo_consultantbookmail" msprop:Generator_ColumnPropNameInRow="oppo_consultantbookmail" msprop:Generator_ColumnPropNameInTable="oppo_consultantbookmailColumn" msprop:Generator_UserColumnName="oppo_consultantbookmail" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="oppo_primarytreatmentcount" msprop:Generator_ColumnVarNameInTable="columnoppo_primarytreatmentcount" msprop:Generator_ColumnPropNameInRow="oppo_primarytreatmentcount" msprop:Generator_ColumnPropNameInTable="oppo_primarytreatmentcountColumn" msprop:Generator_UserColumnName="oppo_primarytreatmentcount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="oppo_patientinitials" msprop:Generator_ColumnVarNameInTable="columnoppo_patientinitials" msprop:Generator_ColumnPropNameInRow="oppo_patientinitials" msprop:Generator_ColumnPropNameInTable="oppo_patientinitialsColumn" msprop:Generator_UserColumnName="oppo_patientinitials" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="oppo_consultantinvoiceemail" msprop:Generator_ColumnVarNameInTable="columnoppo_consultantinvoiceemail" msprop:Generator_ColumnPropNameInRow="oppo_consultantinvoiceemail" msprop:Generator_ColumnPropNameInTable="oppo_consultantinvoiceemailColumn" msprop:Generator_UserColumnName="oppo_consultantinvoiceemail" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_validated" msprop:Generator_ColumnVarNameInTable="columnfurt_validated" msprop:Generator_ColumnPropNameInRow="furt_validated" msprop:Generator_ColumnPropNameInTable="furt_validatedColumn" msprop:Generator_UserColumnName="furt_validated" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_theatrelist" msprop:Generator_ColumnVarNameInTable="columnfurt_theatrelist" msprop:Generator_ColumnPropNameInRow="furt_theatrelist" msprop:Generator_ColumnPropNameInTable="furt_theatrelistColumn" msprop:Generator_UserColumnName="furt_theatrelist" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PatientName" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPatientName" msprop:Generator_ColumnPropNameInRow="PatientName" msprop:Generator_ColumnPropNameInTable="PatientNameColumn" msprop:Generator_UserColumnName="PatientName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="71" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_description1" msprop:Generator_ColumnVarNameInTable="columnfurt_description1" msprop:Generator_ColumnPropNameInRow="furt_description1" msprop:Generator_ColumnPropNameInTable="furt_description1Column" msprop:Generator_UserColumnName="furt_description1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_description2" msprop:Generator_ColumnVarNameInTable="columnfurt_description2" msprop:Generator_ColumnPropNameInRow="furt_description2" msprop:Generator_ColumnPropNameInTable="furt_description2Column" msprop:Generator_UserColumnName="furt_description2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_description3" msprop:Generator_ColumnVarNameInTable="columnfurt_description3" msprop:Generator_ColumnPropNameInRow="furt_description3" msprop:Generator_ColumnPropNameInTable="furt_description3Column" msprop:Generator_UserColumnName="furt_description3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_description4" msprop:Generator_ColumnVarNameInTable="columnfurt_description4" msprop:Generator_ColumnPropNameInRow="furt_description4" msprop:Generator_ColumnPropNameInTable="furt_description4Column" msprop:Generator_UserColumnName="furt_description4" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_description5" msprop:Generator_ColumnVarNameInTable="columnfurt_description5" msprop:Generator_ColumnPropNameInRow="furt_description5" msprop:Generator_ColumnPropNameInTable="furt_description5Column" msprop:Generator_UserColumnName="furt_description5" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_anaesthetic" msprop:Generator_ColumnVarNameInTable="columnfurt_anaesthetic" msprop:Generator_ColumnPropNameInRow="furt_anaesthetic" msprop:Generator_ColumnPropNameInTable="furt_anaestheticColumn" msprop:Generator_UserColumnName="furt_anaesthetic" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_invdate" msprop:Generator_ColumnVarNameInTable="columnfurt_invdate" msprop:Generator_ColumnPropNameInRow="furt_invdate" msprop:Generator_ColumnPropNameInTable="furt_invdateColumn" msprop:Generator_UserColumnName="furt_invdate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="furt_invnumber" msprop:Generator_ColumnVarNameInTable="columnfurt_invnumber" msprop:Generator_ColumnPropNameInRow="furt_invnumber" msprop:Generator_ColumnPropNameInTable="furt_invnumberColumn" msprop:Generator_UserColumnName="furt_invnumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_insurer" msprop:Generator_ColumnVarNameInTable="columnfurt_insurer" msprop:Generator_ColumnPropNameInRow="furt_insurer" msprop:Generator_ColumnPropNameInTable="furt_insurerColumn" msprop:Generator_UserColumnName="furt_insurer" type="xs:int" minOccurs="0" />
+              <xs:element name="TreatmentDescription" msprop:Generator_ColumnVarNameInTable="columnTreatmentDescription" msprop:Generator_ColumnPropNameInRow="TreatmentDescription" msprop:Generator_ColumnPropNameInTable="TreatmentDescriptionColumn" msprop:Generator_UserColumnName="TreatmentDescription" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1073741823" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ConsultantName" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnConsultantName" msprop:Generator_ColumnPropNameInRow="ConsultantName" msprop:Generator_ColumnPropNameInTable="ConsultantNameColumn" msprop:Generator_UserColumnName="ConsultantName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="71" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furt_sagepaydate" msprop:Generator_ColumnVarNameInTable="columnfurt_sagepaydate" msprop:Generator_ColumnPropNameInRow="furt_sagepaydate" msprop:Generator_ColumnPropNameInTable="furt_sagepaydateColumn" msprop:Generator_UserColumnName="furt_sagepaydate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="furt_sagetakedate" msprop:Generator_ColumnVarNameInTable="columnfurt_sagetakedate" msprop:Generator_ColumnPropNameInRow="furt_sagetakedate" msprop:Generator_ColumnPropNameInTable="furt_sagetakedateColumn" msprop:Generator_UserColumnName="furt_sagetakedate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="pers_gmcno" msprop:Generator_ColumnVarNameInTable="columnpers_gmcno" msprop:Generator_ColumnPropNameInRow="pers_gmcno" msprop:Generator_ColumnPropNameInTable="pers_gmcnoColumn" msprop:Generator_UserColumnName="pers_gmcno" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PatientAddress" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPatientAddress" msprop:Generator_ColumnPropNameInRow="PatientAddress" msprop:Generator_ColumnPropNameInTable="PatientAddressColumn" msprop:Generator_UserColumnName="PatientAddress" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="204" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Code1Text" msprop:Generator_ColumnVarNameInTable="columnCode1Text" msprop:Generator_ColumnPropNameInRow="Code1Text" msprop:Generator_ColumnPropNameInTable="Code1TextColumn" msprop:Generator_UserColumnName="Code1Text" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Code2Text" msprop:Generator_ColumnVarNameInTable="columnCode2Text" msprop:Generator_ColumnPropNameInRow="Code2Text" msprop:Generator_ColumnPropNameInTable="Code2TextColumn" msprop:Generator_UserColumnName="Code2Text" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Code3Text" msprop:Generator_ColumnVarNameInTable="columnCode3Text" msprop:Generator_ColumnPropNameInRow="Code3Text" msprop:Generator_ColumnPropNameInTable="Code3TextColumn" msprop:Generator_UserColumnName="Code3Text" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Code4Text" msprop:Generator_ColumnVarNameInTable="columnCode4Text" msprop:Generator_ColumnPropNameInRow="Code4Text" msprop:Generator_ColumnPropNameInTable="Code4TextColumn" msprop:Generator_UserColumnName="Code4Text" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Code5Text" msprop:Generator_ColumnVarNameInTable="columnCode5Text" msprop:Generator_ColumnPropNameInRow="Code5Text" msprop:Generator_ColumnPropNameInTable="Code5TextColumn" msprop:Generator_UserColumnName="Code5Text" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="patientAddress1" msprop:Generator_ColumnVarNameInTable="columnpatientAddress1" msprop:Generator_ColumnPropNameInRow="patientAddress1" msprop:Generator_ColumnPropNameInTable="patientAddress1Column" msprop:Generator_UserColumnName="patientAddress1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="patientAddress2" msprop:Generator_ColumnVarNameInTable="columnpatientAddress2" msprop:Generator_ColumnPropNameInRow="patientAddress2" msprop:Generator_ColumnPropNameInTable="patientAddress2Column" msprop:Generator_UserColumnName="patientAddress2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="patientAddress3" msprop:Generator_ColumnVarNameInTable="columnpatientAddress3" msprop:Generator_ColumnPropNameInRow="patientAddress3" msprop:Generator_ColumnPropNameInTable="patientAddress3Column" msprop:Generator_UserColumnName="patientAddress3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="patientAddress4" msprop:Generator_ColumnVarNameInTable="columnpatientAddress4" msprop:Generator_ColumnPropNameInRow="patientAddress4" msprop:Generator_ColumnPropNameInTable="patientAddress4Column" msprop:Generator_UserColumnName="patientAddress4" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="patientAddress5" msprop:Generator_ColumnVarNameInTable="columnpatientAddress5" msprop:Generator_ColumnPropNameInRow="patientAddress5" msprop:Generator_ColumnPropNameInTable="patientAddress5Column" msprop:Generator_UserColumnName="patientAddress5" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="patientCity" msprop:Generator_ColumnVarNameInTable="columnpatientCity" msprop:Generator_ColumnPropNameInRow="patientCity" msprop:Generator_ColumnPropNameInTable="patientCityColumn" msprop:Generator_UserColumnName="patientCity" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="patientCounty" msprop:Generator_ColumnVarNameInTable="columnpatientCounty" msprop:Generator_ColumnPropNameInRow="patientCounty" msprop:Generator_ColumnPropNameInTable="patientCountyColumn" msprop:Generator_UserColumnName="patientCounty" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="patientPostcode" msprop:Generator_ColumnVarNameInTable="columnpatientPostcode" msprop:Generator_ColumnPropNameInRow="patientPostcode" msprop:Generator_ColumnPropNameInTable="patientPostcodeColumn" msprop:Generator_UserColumnName="patientPostcode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ConsultantAddress1" msprop:Generator_ColumnVarNameInTable="columnConsultantAddress1" msprop:Generator_ColumnPropNameInRow="ConsultantAddress1" msprop:Generator_ColumnPropNameInTable="ConsultantAddress1Column" msprop:Generator_UserColumnName="ConsultantAddress1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ConsultantAddress2" msprop:Generator_ColumnVarNameInTable="columnConsultantAddress2" msprop:Generator_ColumnPropNameInRow="ConsultantAddress2" msprop:Generator_ColumnPropNameInTable="ConsultantAddress2Column" msprop:Generator_UserColumnName="ConsultantAddress2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ConsultantAddress3" msprop:Generator_ColumnVarNameInTable="columnConsultantAddress3" msprop:Generator_ColumnPropNameInRow="ConsultantAddress3" msprop:Generator_ColumnPropNameInTable="ConsultantAddress3Column" msprop:Generator_UserColumnName="ConsultantAddress3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ConsultantAddress4" msprop:Generator_ColumnVarNameInTable="columnConsultantAddress4" msprop:Generator_ColumnPropNameInRow="ConsultantAddress4" msprop:Generator_ColumnPropNameInTable="ConsultantAddress4Column" msprop:Generator_UserColumnName="ConsultantAddress4" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ConsultantAddress5" msprop:Generator_ColumnVarNameInTable="columnConsultantAddress5" msprop:Generator_ColumnPropNameInRow="ConsultantAddress5" msprop:Generator_ColumnPropNameInTable="ConsultantAddress5Column" msprop:Generator_UserColumnName="ConsultantAddress5" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ConsultantCity" msprop:Generator_ColumnVarNameInTable="columnConsultantCity" msprop:Generator_ColumnPropNameInRow="ConsultantCity" msprop:Generator_ColumnPropNameInTable="ConsultantCityColumn" msprop:Generator_UserColumnName="ConsultantCity" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ConsultantCounty" msprop:Generator_ColumnVarNameInTable="columnConsultantCounty" msprop:Generator_ColumnPropNameInRow="ConsultantCounty" msprop:Generator_ColumnPropNameInTable="ConsultantCountyColumn" msprop:Generator_UserColumnName="ConsultantCounty" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ConsultantPostcode" msprop:Generator_ColumnVarNameInTable="columnConsultantPostcode" msprop:Generator_ColumnPropNameInRow="ConsultantPostcode" msprop:Generator_ColumnPropNameInTable="ConsultantPostcodeColumn" msprop:Generator_UserColumnName="ConsultantPostcode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InsurerName" msprop:Generator_ColumnVarNameInTable="columnInsurerName" msprop:Generator_ColumnPropNameInRow="InsurerName" msprop:Generator_ColumnPropNameInTable="InsurerNameColumn" msprop:Generator_UserColumnName="InsurerName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InsurerAddress1" msprop:Generator_ColumnVarNameInTable="columnInsurerAddress1" msprop:Generator_ColumnPropNameInRow="InsurerAddress1" msprop:Generator_ColumnPropNameInTable="InsurerAddress1Column" msprop:Generator_UserColumnName="InsurerAddress1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InsurerAddress2" msprop:Generator_ColumnVarNameInTable="columnInsurerAddress2" msprop:Generator_ColumnPropNameInRow="InsurerAddress2" msprop:Generator_ColumnPropNameInTable="InsurerAddress2Column" msprop:Generator_UserColumnName="InsurerAddress2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InsurerAddress3" msprop:Generator_ColumnVarNameInTable="columnInsurerAddress3" msprop:Generator_ColumnPropNameInRow="InsurerAddress3" msprop:Generator_ColumnPropNameInTable="InsurerAddress3Column" msprop:Generator_UserColumnName="InsurerAddress3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InsurerAddress4" msprop:Generator_ColumnVarNameInTable="columnInsurerAddress4" msprop:Generator_ColumnPropNameInRow="InsurerAddress4" msprop:Generator_ColumnPropNameInTable="InsurerAddress4Column" msprop:Generator_UserColumnName="InsurerAddress4" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InsurerAddress5" msprop:Generator_ColumnVarNameInTable="columnInsurerAddress5" msprop:Generator_ColumnPropNameInRow="InsurerAddress5" msprop:Generator_ColumnPropNameInTable="InsurerAddress5Column" msprop:Generator_UserColumnName="InsurerAddress5" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InsurerCity" msprop:Generator_ColumnVarNameInTable="columnInsurerCity" msprop:Generator_ColumnPropNameInRow="InsurerCity" msprop:Generator_ColumnPropNameInTable="InsurerCityColumn" msprop:Generator_UserColumnName="InsurerCity" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InsurerCounty" msprop:Generator_ColumnVarNameInTable="columnInsurerCounty" msprop:Generator_ColumnPropNameInRow="InsurerCounty" msprop:Generator_ColumnPropNameInTable="InsurerCountyColumn" msprop:Generator_UserColumnName="InsurerCounty" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InsurerPostcode" msprop:Generator_ColumnVarNameInTable="columnInsurerPostcode" msprop:Generator_ColumnPropNameInRow="InsurerPostcode" msprop:Generator_ColumnPropNameInTable="InsurerPostcodeColumn" msprop:Generator_UserColumnName="InsurerPostcode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ConsultantBalance" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnConsultantBalance" msprop:Generator_ColumnPropNameInRow="ConsultantBalance" msprop:Generator_ColumnPropNameInTable="ConsultantBalanceColumn" msprop:Generator_UserColumnName="ConsultantBalance" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//vw_InvoiceTemplate" />
+      <xs:field xpath="furt_FurtherID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
