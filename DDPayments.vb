@@ -53,7 +53,7 @@ Public Class DDPayments
         'sCrmFieldlist = sCrmFieldlist & ""
         'Dim sCRMSql As String = "SELECT " & sCrmFieldlist & " from vw_FurtherSageLinkProcess2 "
 
-        Dim sCRMSql As String = "SELECT ALLI03.[DOCUMENT].thAcCode, isnull(vConsultant.pers_ddplanref,vConsultant.pers_gmcno) as ddPlanRef, vFurther_1.furt_invnumber AS INV_REF"
+        Dim sCRMSql As String = "SELECT ThRemitNo, ALLI03.[DOCUMENT].thAcCode, isnull(vConsultant.pers_ddplanref,vConsultant.pers_gmcno) as ddPlanRef, vFurther_1.furt_invnumber AS INV_REF"
         sCRMSql = sCRMSql & ",ALLI03.[DOCUMENT].thUserField1 as DETAILS, ALLI03.[DOCUMENT].thDueDate as DUE_DATE, furt_date as DATE"
         'sCRMSql = sCRMSql & ",ISNULL(vFurther_1.furt_invamount, 0) - ISNULL(vFurther_1.furt_PITotal, 0) AS ConsultantBalance"
         sCRMSql = sCRMSql & ",ISNULL(vFurther_1.furt_invamount, 0)  AS ConsultantBalance"
@@ -69,14 +69,17 @@ Public Class DDPayments
         sCRMSql = sCRMSql & "vFurther_1.furt_treattype <> 'Diagnostics' AND vFurther_1.furt_processmap = '2' AND ISNULL(vFurther_1.furt_cannotinvoice, N'N') <> 'OH' AND vFurther_1.furt_treattype <> 'Update' and vFurther_1.furt_insurer <> 9531 and vFurther_1.furt_insurer <> 13838"
         '        sCRMSql = sCRMSql & " and datediff(dd, vFurther_1.furt_ddnotificationsent,'2013-10-14') = 0 "
         If pOption = SelectType.Notification Then
-            sCRMSql = sCRMSql & String.Format("  AND (ALLI03.[DOCUMENT].thUserField5 ='DD') AND vFurther_1.furt_sagetakedate <= '{0}' And vFurther_1.furt_ddpaymenttaken Is null and vFurther_1.furt_invdate is not null and vFurther_1.furt_ddnotificationsent is null and vConsultant.pers_ddactive = '0'", duedate.ToString("yyyy/MM/dd"))
+            sCRMSql = sCRMSql & String.Format("  AND (ALLI03.[DOCUMENT].thUserField5 ='DD') AND vFurther_1.furt_sagetakedate <= '{0}' And vFurther_1.furt_ddpaymenttaken Is null and vFurther_1.furt_invdate is not null and vFurther_1.furt_ddnotificationsent is null and vConsultant.pers_ddactive = '0' and ThRemitNo <> ''", duedate.ToString("yyyy/MM/dd"))
         Else
-            If XtraMessageBox.Show("Is this a New Submission Y/N", "New Submission", MessageBoxButtons.YesNo) = Windows.Forms.DialogResult.Yes Then
+            If XtraMessageBox.Show("Is this a New Submission Y/N", "New Submission", MessageBoxButtons.YesNo) = Windows.Forms.DialogResult.No Then
                 'sCRMSql = sCRMSql & String.Format(" AND (ALLI03.[DOCUMENT].thUserField5 LIKE 'DD Notified%') AND vFurther_1.furt_sagetakedate <= '{0}' and vFurther_1.furt_invdate is not null and vFurther_1.furt_ddnotificationsent is not null and vFurther_1.furt_ddsubmitted is null and vFurther_1.furt_ddpaymenttaken is null and vConsultant.pers_ddactive = '0'", duedate.ToString("yyyy/MM/dd"))
                 'sCRMSql = sCRMSql & String.Format(" AND vFurther_1.furt_sagetakedate <= '{0}' and vFurther_1.furt_invdate is not null and vFurther_1.furt_ddnotificationsent is not null and vFurther_1.furt_ddsubmitted is null and vFurther_1.furt_ddpaymenttaken is null and vConsultant.pers_ddactive = '0'", duedate.ToString("yyyy/MM/dd"))
-                sCRMSql = sCRMSql & String.Format(" AND datediff(dd, vFurther_1.furt_ddsubmitted,'{0}') = 0  and vConsultant.pers_ddactive = '0'", duedate.ToString("yyyy/MM/dd"))
+                sCRMSql = sCRMSql & " and ALLI03.[DOCUMENT].thAmountSettled <>   ALLI03.[DOCUMENT].thNetValue  and thOutstanding <> '' "
+                sCRMSql = sCRMSql & String.Format(" AND datediff(dd, vFurther_1.furt_ddsubmitted,'{0}') = 0  and vConsultant.pers_ddactive = '0' and ThRemitNo <> ''", duedate.ToString("yyyy/MM/dd"))
             Else
-                sCRMSql = sCRMSql & String.Format(" AND vFurther_1.furt_sagetakedate <= '{0}' and vFurther_1.furt_invdate is not null and vFurther_1.furt_ddnotificationsent is not null and datediff(dd, vFurther_1.furt_ddsubmitted, getdate()) = 0 and vFurther_1.furt_ddpaymenttaken is null and vConsultant.pers_ddactive = '0'", duedate.ToString("yyyy/MM/dd"))
+                sCRMSql = sCRMSql & " and ALLI03.[DOCUMENT].thAmountSettled <>   ALLI03.[DOCUMENT].thNetValue and thOutstanding <> ''"
+                sCRMSql = sCRMSql & String.Format(" AND vFurther_1.furt_sagetakedate <= '{0}' and vFurther_1.furt_invdate is not null and vFurther_1.furt_ddnotificationsent is not null and vFurther_1.furt_ddsubmitted is null and vConsultant.pers_ddactive = '0' and ThRemitNo <> ''", duedate.ToString("yyyy/MM/dd"))
+
             End If
         End If
 

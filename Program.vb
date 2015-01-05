@@ -22,11 +22,11 @@ Namespace Sage2CRM
             XpoDefault.RegisterBonusProviders()
             Dim CnString = Sage2CRMSettings.GetSetting("ACCOUNTSCONNECTION")
             If CnString = "" Then
-                Sage2CRMSettings.SetSetting("ACCOUNTSCONNECTION", "DataSource=alliance-sql;Initial Catalog=AccountsData;Integrated Security=True;Connect Timeout=60")
+                Sage2CRMSettings.SetSetting("ACCOUNTSCONNECTION", "Data Source=ALLIANCE-SQL;Initial Catalog=CRM;integrated security=SSPI")
             End If
             CnString = Sage2CRMSettings.GetSetting("CRMCONNECTION")
             If CnString = "" Then
-                Sage2CRMSettings.SetSetting("CRMCONNECTION", "DataSource=alliance-sql;Initial Catalog=CRM ;Integrated Security=True;Connect Timeout=60")
+                Sage2CRMSettings.SetSetting("CRMCONNECTION", "Data Source=ALLIANCE-SQL;Initial Catalog=CRM;integrated security=SSPI")
             End If
 
             ConnectionHelper.Connect(DevExpress.Xpo.DB.AutoCreateOption.SchemaOnly)

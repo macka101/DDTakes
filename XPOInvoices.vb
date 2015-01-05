@@ -4,6 +4,7 @@ Imports DevExpress.Data.Filtering
 
 Public Class ConnectionHelper
     Const ConnectionString = "XpoProvider=MSSqlServer;data source=alliance-sql;integrated security=SSPI;initial catalog=AccountsData"
+    '  Const ConnectionString = "XpoProvider=MSSqlServer;data source=alliance-sql;Persist Security Info=True;User ID=CRM;Password=ferrett;initial catalog=AccountsData"
 
     Public Shared Sub Connect(ByVal autoCreationOption As DB.AutoCreateOption)
         Dim CnString = Sage2CRMSettings.GetSetting("CRMCONNECTION")
