@@ -2,7 +2,6 @@
 Imports System.Data
 Imports System.Data.SqlClient
 Imports System.Data.Odbc
-
 Imports Microsoft.VisualBasic
 Imports DevExpress.XtraGrid
 Imports DevExpress.XtraPrinting
@@ -69,16 +68,16 @@ Public Class DDPayments
         sCRMSql = sCRMSql & "vFurther_1.furt_treattype <> 'Diagnostics' AND vFurther_1.furt_processmap = '2' AND ISNULL(vFurther_1.furt_cannotinvoice, N'N') <> 'OH' AND vFurther_1.furt_treattype <> 'Update' and vFurther_1.furt_insurer <> 9531 and vFurther_1.furt_insurer <> 13838"
         '        sCRMSql = sCRMSql & " and datediff(dd, vFurther_1.furt_ddnotificationsent,'2013-10-14') = 0 "
         If pOption = SelectType.Notification Then
-            sCRMSql = sCRMSql & String.Format("  AND (ALLI03.[DOCUMENT].thUserField5 ='DD') AND vFurther_1.furt_sagetakedate <= '{0}' And vFurther_1.furt_ddpaymenttaken Is null and vFurther_1.furt_invdate is not null and vFurther_1.furt_ddnotificationsent is null and vConsultant.pers_ddactive = '0' and ThRemitNo <> ''", duedate.ToString("yyyy/MM/dd"))
+            sCRMSql = sCRMSql & String.Format("  AND (ALLI03.[DOCUMENT].thUserField5 ='DD') AND vFurther_1.furt_sagetakedate <= '{0}' And vFurther_1.furt_ddpaymenttaken Is null and vFurther_1.furt_invdate is not null AND (vFurther_1.furt_DDNotificationSent IS NULL) and vConsultant.pers_ddactive = '0' and ThRemitNo = ''", duedate.ToString("yyyy/MM/dd"))
         Else
             If XtraMessageBox.Show("Is this a New Submission Y/N", "New Submission", MessageBoxButtons.YesNo) = Windows.Forms.DialogResult.No Then
                 'sCRMSql = sCRMSql & String.Format(" AND (ALLI03.[DOCUMENT].thUserField5 LIKE 'DD Notified%') AND vFurther_1.furt_sagetakedate <= '{0}' and vFurther_1.furt_invdate is not null and vFurther_1.furt_ddnotificationsent is not null and vFurther_1.furt_ddsubmitted is null and vFurther_1.furt_ddpaymenttaken is null and vConsultant.pers_ddactive = '0'", duedate.ToString("yyyy/MM/dd"))
                 'sCRMSql = sCRMSql & String.Format(" AND vFurther_1.furt_sagetakedate <= '{0}' and vFurther_1.furt_invdate is not null and vFurther_1.furt_ddnotificationsent is not null and vFurther_1.furt_ddsubmitted is null and vFurther_1.furt_ddpaymenttaken is null and vConsultant.pers_ddactive = '0'", duedate.ToString("yyyy/MM/dd"))
                 sCRMSql = sCRMSql & " and ALLI03.[DOCUMENT].thAmountSettled <>   ALLI03.[DOCUMENT].thNetValue  and thOutstanding <> '' "
-                sCRMSql = sCRMSql & String.Format(" AND datediff(dd, vFurther_1.furt_ddsubmitted,'{0}') = 0  and vConsultant.pers_ddactive = '0' and ThRemitNo <> ''", duedate.ToString("yyyy/MM/dd"))
+                sCRMSql = sCRMSql & String.Format(" AND datediff(dd, vFurther_1.furt_ddsubmitted,'{0}') = 0  and vConsultant.pers_ddactive = '0' and ThRemitNo = ''", duedate.ToString("yyyy/MM/dd"))
             Else
                 sCRMSql = sCRMSql & " and ALLI03.[DOCUMENT].thAmountSettled <>   ALLI03.[DOCUMENT].thNetValue and thOutstanding <> ''"
-                sCRMSql = sCRMSql & String.Format(" AND vFurther_1.furt_sagetakedate <= '{0}' and vFurther_1.furt_invdate is not null and vFurther_1.furt_ddnotificationsent is not null and vFurther_1.furt_ddsubmitted is null and vConsultant.pers_ddactive = '0' and ThRemitNo <> ''", duedate.ToString("yyyy/MM/dd"))
+                sCRMSql = sCRMSql & String.Format(" AND vFurther_1.furt_sagetakedate <= '{0}' and vFurther_1.furt_invdate is not null and datediff(dd,vFurther_1.furt_invdate,GETDATE())> 45 and vFurther_1.furt_ddnotificationsent is null and vFurther_1.furt_ddsubmitted is null and vConsultant.pers_ddactive = '0' and ThRemitNo = ''", duedate.ToString("yyyy/MM/dd"))
 
             End If
         End If
@@ -313,10 +312,11 @@ Public Class DDPayments
                     Try
                         Dim cn As New SqlConnection(Sage2CRMSettings.GetSetting("CRMConnection"))
                         Dim sCmd As New SqlCommand
+                        Dim Sstr As String = ""
                         If Debugger.IsAttached = False Then
                             cn.Open()
                             'DEBUG
-                            Dim Sstr As String = String.Format("Update further set furt_ddnotificationsent= getdate(), furt_sagetakedate = '{0:dd/MMMM/yyyy}' where furt_furtherid = {1}", duedate.ToLongDateString, iFurtherId)
+                            ' Dim Sstr As String = String.Format("Update further set furt_ddnotificationsent= getdate(), furt_sagetakedate = '{0:dd/MMMM/yyyy}' where furt_furtherid = {1}", duedate.ToLongDateString, iFurtherId)
                             sCmd = New SqlCommand(Sstr, cn)
                             sCmd.ExecuteNonQuery()
                             cn.Close()
@@ -331,10 +331,11 @@ Public Class DDPayments
                             Try
                                 Dim cn As New SqlConnection(sExchConn)
                                 Dim sCmd As New SqlCommand
+                                Dim Sstr As String = ""
                                 If bDoNotEmail = False Then
                                     cn.Open()
                                     'DEBUG                                 
-                                    Dim Sstr As String = String.Format("Update ALLI03.[DOCUMENT] set thDueDate = {0},  thUserField5 = 'DD Notified {1:dd/MMMM/yyyy}' where thOurRef = {1}", duedate.ToLongDateString, CStr(oRow.Item("thOurRef").ToString.Trim))
+                                    '   Dim Sstr As String = String.Format("Update ALLI03.[DOCUMENT] set thDueDate = {0},  thUserField5 = 'DD Notified {1:dd/MMMM/yyyy}' where thOurRef = {1}", duedate.ToLongDateString, CStr(oRow.Item("thOurRef").ToString.Trim))
                                     sCmd = New SqlCommand(Sstr, cn)
                                     sCmd.ExecuteNonQuery()
                                     cn.Close()
@@ -455,7 +456,7 @@ Public Class DDPayments
                                 Next
                             End If
                             insMail.Body = eBody
-                            objSMTPClient.Send(insMail)
+                            '  objSMTPClient.Send(insMail)
                         End If
                         insMail = New MailMessage
                         dscons.Clear()
@@ -479,7 +480,7 @@ Public Class DDPayments
                                 For Each addrstr As String In addrArray
                                     .Bcc.Add(New MailAddress(addrstr))
                                 Next
-                                .Bcc.Add(New MailAddress("john.molloy@interactivesp.com"))
+                                .Bcc.Add(New MailAddress("adrianfearon@allsurgical.co.uk"))
                                 Dim addrArray1 As String() = dsConsEmail.Split(";")
                                 For Each addrstr As String In addrArray1
                                     If addrstr.Length > 0 Then
@@ -496,74 +497,78 @@ Public Class DDPayments
                         eBodyDetails = ""
                         cAccount = CStr(oRow.Item("thAcCode").ToString.Trim)
 
-                        '     eBody = String.Format(eTextLines(0), Str(oRow.Item("ConsFirstName").ToString.Trim)) & vbCrLf
+                        ' eBody = String.Format(eTextLines(0), Str(oRow.Item("ConsFirstName").ToString.Trim)) & vbCrLf
                         eBody = String.Format(eTextLines(0), dsConsFirstname) & vbCrLf & vbCrLf
                         eBody = eBody & String.Format(eTextLines(1), "") & vbCrLf & vbCrLf
                         eBody = eBody & String.Format(eTextLines(2), cAccount) & vbCrLf & vbCrLf
 
                     End If
 
-                    dTotal = dTotal + CDec(oRow.Item("OUTSTANDING").ToString)
-                    cTotal = cTotal + CDec(oRow.Item("ConsultantBalance").ToString)
+                            dTotal = dTotal + CDec(oRow.Item("OUTSTANDING").ToString)
+                            cTotal = cTotal + CDec(oRow.Item("ConsultantBalance").ToString)
 
-                    Dim Edate As DateTime
+                            Dim Edate As DateTime
 
-                    Edate = DateTime.Parse(oRow.Item("DATE").ToString)
+                            Edate = DateTime.Parse(oRow.Item("DATE").ToString)
 
-                    If bCurrentProcess = InvoiceProcess.DD Then
-                        'eBodyDetails = eBodyDetails & String.Format(eTextLines(7), InvoiceDate.ToShortDateString, sInvoice, CDec(orow.Item("PurchaseTotal").ToString.Trim), sPatient) & vbCrLf
-                        eBodyDetails = eBodyDetails & String.Format(eTextLines(8), Edate.ToShortDateString, oRow.Item("Details").ToString) & vbCrLf
-                    Else
-                        eBodyDetails = eBodyDetails & String.Format(eTextLines(8), Edate.ToShortDateString, oRow.Item("Details").ToString) & vbCrLf
-                    End If
-                    Dim iFurtherId As Integer = CInt(oRow.Item("ID"))
-                    Dim sfile As String = CreateStatementPDF(iFurtherId, CStr(oRow.Item("INV_REF").ToString), False)
+                            If bCurrentProcess = InvoiceProcess.DD Then
+                                'eBodyDetails = eBodyDetails & String.Format(eTextLines(7), InvoiceDate.ToShortDateString, sInvoice, CDec(orow.Item("PurchaseTotal").ToString.Trim), sPatient) & vbCrLf
+                                eBodyDetails = eBodyDetails & String.Format(eTextLines(8), Edate.ToShortDateString, oRow.Item("Details").ToString) & vbCrLf
+                            Else
+                                eBodyDetails = eBodyDetails & String.Format(eTextLines(8), Edate.ToShortDateString, oRow.Item("Details").ToString) & vbCrLf
+                            End If
+                            Dim iFurtherId As Integer = CInt(oRow.Item("ID"))
+                            Dim sfile As String = CreateStatementPDF(iFurtherId, CStr(oRow.Item("INV_REF").ToString), False)
 
-                    insMail.Attachments.Add(New Net.Mail.Attachment(Trim(sfile)))
+                            insMail.Attachments.Add(New Net.Mail.Attachment(Trim(sfile)))
 
-                    Try
-                        Dim cn As New SqlConnection(Sage2CRMSettings.GetSetting("CRMConnection"))
-                        Dim sCmd As New SqlCommand
-                        If bDoNotEmail = False Then
-                            cn.Open()
-                            'DEBUG
-                            Dim Sstr As String = String.Format("Update further set furt_ddnotificationsent= getdate(), furt_sagetakedate = '{0:dd/MMMM/yyyy}' where furt_furtherid = {1}", duedate.ToLongDateString, iFurtherId)
+                            Try
+
+                                ' Update flag in the database to indicate noto
+                                Dim cn As New SqlConnection(Sage2CRMSettings.GetSetting("CRMConnection"))
+                                Dim sCmd As New SqlCommand
+                                Dim Sstr As String = ""
+                                If bDoNotEmail = False Then
+                                    cn.Open()
+
+                                    'DEBUG
+                            Sstr = String.Format("Update further set furt_ddnotificationsent= getdate(), furt_sagetakedate = '{0:dd/MMMM/yyyy}' where furt_furtherid = {1}", duedate.ToLongDateString, iFurtherId)
                             sCmd = New SqlCommand(Sstr, cn)
                             sCmd.ExecuteNonQuery()
-                            cn.Close()
-                        End If
+                                    cn.Close()
+                                End If
 
-                    Catch ex As Exception
-                        MsgBox("Error", MsgBoxStyle.Critical, ex.Message)
-                    End Try
+                            Catch ex As Exception
+                                MsgBox("Error", MsgBoxStyle.Critical, ex.Message)
+                            End Try
 
-                    Try
-                        Try
-                            Dim cn As New SqlConnection(sExchConn)
-                            Dim sCmd As New SqlCommand
-                            If bDoNotEmail = False Then
-                                ' cn.Open()
-                                'DEBUG                                 
-                                '  Dim Sstr As String = String.Format("Update ALLI03.[DOCUMENT] set thDueDate = {0},  thUserField5 = 'DD Notified '{1:dd/MMMM/yyyy}' where thOurRef = {1}", duedate.ToLongDateString, CStr(oRow.Item("thOurRef").ToString.Trim))
-                                ' sCmd = New SqlCommand(Sstr, cn)
-                                ' sCmd.ExecuteNonQuery()
-                                ' cn.Close()
-                            End If
-                        Catch ex As Exception
-                            MsgBox("Error", MsgBoxStyle.Critical, ex.Message)
-                        End Try
-                    Catch ex As Exception
-                        MsgBox("Error", MsgBoxStyle.Critical, ex.Message)
-        End Try
-                    Dim newRow As DataRow = dsEmailCSv.Tables("Notifications").NewRow()
-                    newRow("GMC") = cAccount
-                    newRow("Invoice") = CStr(oRow.Item("INV_REF").ToString.Trim)
-                    newRow("Patient") = oRow.Item("DETAILS").ToString
-                    newRow("Consultant") = dscons.Tables(0).Rows(0).Item("Pers_FullName").ToString.Trim()
-                    newRow("InvoiceDate") = oRow.Item("DATE")
-                    newRow("DueDate") = beiSelectionDate.EditValue
-                    newRow("Value") = CDbl(oRow.Item("OUTSTANDING"))
-                    dsEmailCSv.Tables("Notifications").Rows.Add(newRow)
+                            Try
+                                Try
+                                    Dim cn As New SqlConnection(sExchConn)
+                                    Dim sCmd As New SqlCommand
+                                    If bDoNotEmail = False Then
+                                        ' cn.Open()
+                                        'DEBUG                                 
+                                        '  Dim Sstr As String = String.Format("Update ALLI03.[DOCUMENT] set thDueDate = {0},  thUserField5 = 'DD Notified '{1:dd/MMMM/yyyy}' where thOurRef = {1}", duedate.ToLongDateString, CStr(oRow.Item("thOurRef").ToString.Trim))
+                                        ' sCmd = New SqlCommand(Sstr, cn)
+                                        ' sCmd.ExecuteNonQuery()
+                                        ' cn.Close()
+                                    End If
+                                Catch ex As Exception
+                                    MsgBox("Error", MsgBoxStyle.Critical, ex.Message)
+                                End Try
+                            Catch ex As Exception
+                                MsgBox("Error", MsgBoxStyle.Critical, ex.Message)
+                            End Try
+                            Dim newRow As DataRow = dsEmailCSv.Tables("Notifications").NewRow()
+                            newRow("GMC") = cAccount
+                            newRow("Invoice") = CStr(oRow.Item("INV_REF").ToString.Trim)
+                            newRow("Patient") = oRow.Item("DETAILS").ToString
+                            newRow("Consultant") = dscons.Tables(0).Rows(0).Item("Pers_FullName").ToString.Trim()
+                            newRow("InvoiceDate") = oRow.Item("DATE")
+                            newRow("DueDate") = beiSelectionDate.EditValue
+                            newRow("Value") = CDbl(oRow.Item("OUTSTANDING"))
+                            dsEmailCSv.Tables("Notifications").Rows.Add(newRow)
 
                 End If
                 beiProgress.EditValue = iRow
@@ -596,7 +601,7 @@ Public Class DDPayments
                 insMail.Body = eBody
                 objSMTPClient.Send(insMail)
             End If
-            EmailFinance()
+            'DEBUG   EmailFinance()
             dsEmailCSv.Tables("Notifications").Clear()
             MsgBox("All Done", MsgBoxStyle.OkOnly, "Notifications")
         Catch ex As Exception
@@ -969,8 +974,9 @@ Public Class DDPayments
         ProcessInvoicesforDD()
         LoadPayments(ThisBatch)
 
-        Dim sFile As String = String.Format("{0}\DD {1:d2}{2:d2}{3:d2}-{4:d2}{5:d2}{6:d2}.csv", Sage2CRMSettings.GetSetting("ADHOCPOLLINGPATH"), DateAndTime.Now.Year, DateAndTime.Now.Month, DateAndTime.Now.Day, DateAndTime.Now.Hour, DateAndTime.Now.Minute, DateAndTime.Now.Second)
-
+        ' Dim sFile As String = String.Format("{0}\DD {1:d2}{2:d2}{3:d2}-{4:d2}{5:d2}{6:d2}.csv", Sage2CRMSettings.GetSetting("ADHOCPOLLINGPATH"), DateAndTime.Now.Year, DateAndTime.Now.Month, DateAndTime.Now.Day, DateAndTime.Now.Hour, DateAndTime.Now.Minute, DateAndTime.Now.Second)
+        Dim sFile As String = String.Format("{0}\DD {1:d2}{2:d2}{3:d2}-{4:d2}{5:d2}{6:d2}.csv", My.Settings.ADHOCPOLLINGPATH, DateAndTime.Now.Year, DateAndTime.Now.Month, DateAndTime.Now.Day, DateAndTime.Now.Hour, DateAndTime.Now.Minute, DateAndTime.Now.Second)
+        MsgBox(sFile)
         Dim txtoptions As DevExpress.XtraPrinting.TextExportOptions = New DevExpress.XtraPrinting.TextExportOptions()
         txtoptions.Separator = ","
         txtoptions.QuoteStringsWithSeparators = True
@@ -1134,8 +1140,8 @@ Public Class DDPayments
         Dim sfd As SaveFileDialog = New SaveFileDialog()
 
         sfd.Title = "Save"
-        sfd.DefaultExt = "XLS"
-        sfd.Filter = "*.xls|*.xls"
+        sfd.DefaultExt = "TXT"
+        sfd.Filter = "*.txt|*.txt"
         sfd.FileName = "Selection "
 
         If sfd.ShowDialog() = DialogResult.OK Then
@@ -1246,52 +1252,52 @@ Public Class DDPayments
     Private Function getEmailText() As String()
         If bCurrentProcess = InvoiceProcess.DD Then
             Return {"Dear {0}", _
-"Payment notice in respect of the statements below.", _
-"", _
-"Please find enclosed statement/s relating to your most recent Alliance Surgical referred patients. Please note that payment ", _
-"will be taken by Direct Debit.", _
-"", _
-"Payment will be deducted approximately 45 days of the date of consult/treatment taking place.", _
-"Date              Patient     ", _
-"{0}   {1} ", _
-"", _
-"BACS Payments:    ", _
-"Alliance Surgical plc", _
-"Account: 43784142", _
-"Sort Code: 20-07-71", _
-"", _
-"Cheques payable to Alliance Surgical plc, posted to:    ", _
-"Finance Department", _
-"Alliance Surgical plc", _
-"Edgbaston House", _
-"3 Duchess Place", _
-"Hagley Road", _
-"Birmingham", _
-"B16 8NH"}
+                    "Payment notice in respect of the statements below.", _
+                    "", _
+                    "Please find enclosed statement/s relating to your most recent Alliance Surgical referred patients. Please note that payment ", _
+                    "will be taken by Direct Debit.", _
+                    "", _
+                    "Payment will be deducted approximately 45 days of the date of consult/treatment taking place.", _
+                    "Date              Patient     ", _
+                    "{0}   {1} ", _
+                    "", _
+                    "BACS Payments:    ", _
+                    "Alliance Surgical plc", _
+                    "Account: 43784142", _
+                    "Sort Code: 20-07-71", _
+                    "", _
+                    "Cheques payable to Alliance Surgical plc, posted to:    ", _
+                    "Finance Department", _
+                    "Alliance Surgical plc", _
+                    "Edgbaston House", _
+                    "3 Duchess Place", _
+                    "Hagley Road", _
+                    "Birmingham", _
+                    "B16 8NH"}
         Else
             Return {"Dear {0}", _
-    "Payment notice in respect of the statements below.", _
-    "", _
-    "Please find enclosed statement/s relating to your most recent Alliance Surgical referred patients. Please note that payment ", _
-    "can be made by BACS to the following bank account, or by cheque, made payable to Alliance Surgical plc, and sent to the ", _
-    "address below.", _
-    "Payment is due within 45 days of the date of consult/treatment taking place.", _
-    "Date             Patient     ", _
-    "{0}   {1} ", _
-    "", _
-    "BACS Payments:    ", _
-    "Alliance Surgical plc", _
-    "Account: 43784142", _
-    "Sort Code: 20-07-71", _
-  "", _
-    "Cheques payable to Alliance Surgical plc, posted to:    ", _
-    "Finance Department", _
-    "Alliance Surgical plc", _
-    "Edgbaston House", _
-    "3 Duchess Place", _
-    "Hagley Road", _
-    "Birmingham", _
-    "B16 8NH"}
+                    "Payment notice in respect of the statements below.", _
+                    "", _
+                    "Please find enclosed statement/s relating to your most recent Alliance Surgical referred patients. Please note that payment ", _
+                    "can be made by BACS to the following bank account, or by cheque, made payable to Alliance Surgical plc, and sent to the ", _
+                    "address below.", _
+                    "Payment is due within 45 days of the date of consult/treatment taking place.", _
+                    "Date             Patient     ", _
+                    "{0}   {1} ", _
+                    "", _
+                    "BACS Payments:    ", _
+                    "Alliance Surgical plc", _
+                    "Account: 43784142", _
+                    "Sort Code: 20-07-71", _
+                  "", _
+                    "Cheques payable to Alliance Surgical plc, posted to:    ", _
+                    "Finance Department", _
+                    "Alliance Surgical plc", _
+                    "Edgbaston House", _
+                    "3 Duchess Place", _
+                    "Hagley Road", _
+                    "Birmingham", _
+                    "B16 8NH"}
 
         End If
 
